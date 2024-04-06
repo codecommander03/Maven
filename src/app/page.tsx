@@ -1,10 +1,13 @@
+import Home from '@/modules/home/home'
 import React from 'react'
 
 type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div>page</div>
+    <div>
+      <Home/>
+    </div>
   )
 }
 
