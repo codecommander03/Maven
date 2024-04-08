@@ -3,7 +3,8 @@ import React from 'react'
 import Banner from './features/banner'
 import Branding from './features/branding'
 import Benefits from './benefits'
-import FeatureHighlight from './feature.highlight'
+import FeatureHighlight from './features/feature.highlight'
+import Pricing from './features/pricing'
 
 type Props = {}
 
@@ -16,6 +17,7 @@ const Home = (props: Props) => {
       <Benefits />
       {/* FREE trial card pending */}
       <FeatureHighlight />
+      <Pricing />
     </div>
   )
 }
