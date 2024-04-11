@@ -1,5 +1,4 @@
 import Link from "next/link";
-import React from "react";
 import Logo from "./logo";
 import Navitems from "./nav.items";
 import Toolbar from "./toolbar";
