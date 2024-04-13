@@ -1,6 +1,6 @@
 "use client";
-// import { subscribersAnalytics } from "@/actions/subscribers.analytics";
-// import useSubscribersAnalytics from "@/shared/hooks/useSubscribersAnalytics";
+import { subscribersAnalytics } from "@/actions/subscribers.analytics";
+import useSubscribersAnalytics from "@/shared/hooks/useSubscribersAnalytics";
 import { useEffect, useState } from "react";
 import {
     LineChart,
@@ -18,48 +18,49 @@ interface subscribersAnalyticsData {
 }
 
 const SubscribersChart = () => {
-//   const { subscribersData, loading } = useSubscribersAnalytics();
+    const { subscribersData, loading } = useSubscribersAnalytics();
 
-//   const data: subscribersAnalyticsData[] = [];
+    const data: subscribersAnalyticsData[] = [];
 
-//   subscribersData &&
-//     subscribersData?.last7Months?.forEach((item: subscribersAnalyticsData) => {
-//       data.push({
-//         month: item?.month,
-//         count: item?.count,
-//       });
-//     });
+    subscribersData &&
+        subscribersData?.last7Months?.forEach((item: subscribersAnalyticsData) => {
+        data.push({
+            month: item?.month,
+            count: item?.count,
+        });
+    });
 
-    const data = [
-        {
-            month: "Jan 2024",
-            count: 2400,
-        },
-        {
-            month: "Feb 2024",
-            count: 1398,
-        },
-        {
-            month: "March 2024",
-            count: 9800,
-        },
-        {
-            month: "April 2024",
-            count: 3908,
-        },
-        {
-            month: "May 2024",
-            count: 4800,
-        },
-        {
-            month: "Jun 2024",
-            count: 3800,
-        },
-        {
-            month: "July 2024",
-            count: 4300,
-        },
-    ];
+    // dummy data
+    // const data = [
+    //     {
+    //         month: "Jan 2024",
+    //         count: 2400,
+    //     },
+    //     {
+    //         month: "Feb 2024",
+    //         count: 1398,
+    //     },
+    //     {
+    //         month: "March 2024",
+    //         count: 9800,
+    //     },
+    //     {
+    //         month: "April 2024",
+    //         count: 3908,
+    //     },
+    //     {
+    //         month: "May 2024",
+    //         count: 4800,
+    //     },
+    //     {
+    //         month: "Jun 2024",
+    //         count: 3800,
+    //     },
+    //     {
+    //         month: "July 2024",
+    //         count: 4300,
+    //     },
+    // ];
 
     return (
         <div className="my-5 p-5 border rounded bg-white w-full md:h-[55vh] xl:h-[60vh]">
@@ -73,8 +74,7 @@ const SubscribersChart = () => {
                         <span className="pl-2 text-sm opacity-[.7]">Subscribers</span>
                     </div>
                 </div>
-                {/* {loading ? ( */}
-                {false ? (
+                {loading ? (
                     <div className="h-[85%] flex items-center justify-center w-full">
                         <h5>Loading...</h5>
                     </div>

@@ -1,12 +1,12 @@
 // import { manageSubscription } from "@/actions/manage.subscription";
 // import useGetMembership from "@/shared/hooks/useGetMembership";
-// import useSubscribersData from "@/shared/hooks/useSubscribersData";
+import useSubscribersData from "@/shared/hooks/useSubscribersData";
 import { ICONS } from "@/shared/utils/icons";
 import { Slider } from "@nextui-org/slider";
 import { useRouter } from "next/navigation";
 
 const UserPlan = () => {
-    // { data, loading } = useSubscribersData();
+    const { data, loading } = useSubscribersData();
     //const { data: membershipData, loading: membershipLoading } = useGetMembership();
     const history = useRouter();
 
