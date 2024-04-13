@@ -1,7 +1,7 @@
 "use client";
 
-// import { deleteEmail } from "@/actions/delete.email";
-// import { getEmails } from "@/actions/get.emails";
+import { deleteEmail } from "@/actions/delete.email";
+import { getEmails } from "@/actions/get.emails";
 import { ICONS } from "@/shared/utils/icons";
 import { useClerk } from "@clerk/nextjs";
 import { Button } from "@nextui-org/react";
@@ -32,19 +32,19 @@ const Write = () => {
     }, [user]);
 
     const FindEmails = async () => {
-        // await getEmails({ newsLetterOwnerId: user?.id! })
-        // .then((res) => {
-        //     setEmails(res);
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        // });
+        await getEmails({ newsLetterOwnerId: user?.id! })
+        .then((res) => {
+            setEmails(res);
+        })
+        .catch((error) => {
+            console.log(error);
+        });
     };
 
     const deleteHanlder = async (id: string) => {
-        // await deleteEmail({ emailId: id }).then((res) => {
-        // FindEmails();
-        // });
+        await deleteEmail({ emailId: id }).then((res) => {
+        FindEmails();
+        });
     };
 
     return (
