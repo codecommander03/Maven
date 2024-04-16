@@ -36,7 +36,7 @@ export async function generateAnalyticsData<T extends Document>(
                 $gte: startDate,
                 $lt: endDate,
             },
-        });
+        }) || 0;
 
         last7Months.push({ month: monthYear, count });
     }
