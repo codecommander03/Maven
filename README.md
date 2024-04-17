@@ -5,4 +5,4 @@ Inspired from [Beehiiv](https://beehiiv.com/).
 
 **Date Started:** 05-04-2024
 
-**Time spent:** 27 hours
+**Time spent:** 36 hours
