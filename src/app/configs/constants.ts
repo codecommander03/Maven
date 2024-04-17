@@ -60,9 +60,6 @@ export const partners: PartnersTypes[] = [
         url: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=640,quality=75/www/company-logos-cyber-ink-bg/CompanyLogosCyberInkBG/rr.svg",
     },
     {
-        url: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=640,quality=75/www/company-logos-cyber-ink-bg/CompanyLogosCyberInkBG/rr.svg",
-    },
-    {
         url: "https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,onerror=redirect,format=auto,width=640,quality=75/www/company-logos-cyber-ink-bg/CompanyLogosCyberInkBG/resume-worded.svg",
     },
     {
