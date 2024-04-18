@@ -1,15 +1,9 @@
 import { Document, Model } from "mongoose";
-import Subscriber from "../../models/subscriber.model";
 
 interface MonthData {
     month: string;
     count: number;
 }
-
-interface Subscriber extends Document {
-    createdAt: Date;
-}
-
 
 export async function generateAnalyticsData<T extends Document>(
     model: Model<T>
@@ -43,18 +37,7 @@ export async function generateAnalyticsData<T extends Document>(
         //         $lt: endDate,
         //     },
         // }) || 0;
-
-        const model: Model<Subscriber> = require("./yourModel");
-
-        const filter: Partial<Record<keyof Subscriber, any>> = {
-            createdAt: {
-                $gte: startDate,
-                $lt: endDate,
-            },
-        };
-
-        // Use the filter to count documents
-        const count = await model.countDocuments(filter);
+        const count = 0;
 
         last7Months.push({ month: monthYear, count });
     }
