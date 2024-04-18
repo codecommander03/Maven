@@ -7,16 +7,16 @@ import { useRouter } from "next/navigation";
 
 const UserPlan = () => {
     const { data, loading } = useSubscribersData();
-    //const { data: membershipData, loading: membershipLoading } = useGetMembership();
+    const { data: membershipData, loading: membershipLoading } = useGetMembership();
     const history = useRouter();
 
-    // const handleManage = async () => {
-    //     await manageSubscription({
-    //         customerId: membershipData?.stripeCustomerId,
-    //     }).then((res: any) => {
-    //         history.push(res);
-    //     });
-    // };
+    const handleManage = async () => {
+        await manageSubscription({
+            customerId: membershipData?.stripeCustomerId,
+        }).then((res: any) => {
+            history.push(res);
+        });
+    };
 
     return (
         <div className="w-full my-3 p-3 bg-[#FDF1F8] rounded hover:shadow-xl cursor-pointer">
