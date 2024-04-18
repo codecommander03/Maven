@@ -1,9 +1,15 @@
 import { Document, Model } from "mongoose";
+import Subscriber from "../../models/subscriber.model";
 
 interface MonthData {
     month: string;
     count: number;
 }
+
+interface Subscriber extends Document {
+    createdAt: Date;
+}
+
 
 export async function generateAnalyticsData<T extends Document>(
     model: Model<T>
@@ -31,12 +37,24 @@ export async function generateAnalyticsData<T extends Document>(
             year: "numeric",
         });
 
-        const count = await model.countDocuments({
+        // const count = await model.countDocuments({
+        //     createdAt: {
+        //         $gte: startDate,
+        //         $lt: endDate,
+        //     },
+        // }) || 0;
+
+        const model: Model<Subscriber> = require("./yourModel");
+
+        const filter: Partial<Record<keyof Subscriber, any>> = {
             createdAt: {
                 $gte: startDate,
                 $lt: endDate,
             },
-        }) || 0;
+        };
+
+        // Use the filter to count documents
+        const count = await model.countDocuments(filter);
 
         last7Months.push({ month: monthYear, count });
     }
